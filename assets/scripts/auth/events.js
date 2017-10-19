@@ -4,6 +4,7 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
+  console.log(data)
   event.preventDefault()
   api.signUp(data)
     .then(ui.signUpSuccess)
@@ -44,8 +45,8 @@ const onChangePassword = function (event) {
 }
 
 const addHandlers = function () {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
+  $('.sign-up-form').on('submit', onSignUp)
+  $('.sign-in').on('submit', onSignIn)
   $('#change-password-button').on('click', onChangePasswordClick)
   $('#change-pwd').on('submit', onChangePassword)
 }

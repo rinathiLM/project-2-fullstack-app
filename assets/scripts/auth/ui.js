@@ -2,14 +2,15 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  // console.log('Signed up successfully')
+  console.log('Sign up button clicked successfully')
   // $('#home-page-message').text('You signed up successfully! Please sign into your new account to start playing!')
   // $('.sign-up-functionality').hide()
   // $('.sign-in-functionality').show()
 }
 
 const signUpFailure = function () {
-//   console.error(error)
+  console.log('Sign up button clicked failure')
+  console.error()
   // $('#home-page-message').text('There was an error signing up, please try again.')
   // $('#sign-up-name').val('')
   // $('#sign-up-pwd').val('')

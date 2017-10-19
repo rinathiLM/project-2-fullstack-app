@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Track your trails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -13,10 +13,43 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
-<body class="container-fluid">
-  <h1>Example</h1>
+<!-- nav bar -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Track your Trails</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Log a hike</a></li>
+      <li><a href="#">See all your hikes</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <div class="hide-after-logged-in">
+        <li class="sign-in"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </div>
+    </ul>
+  </div>
+</nav>
 
-  <p>fill in later</p>
+<body class="container-fluid">
+  <!-- image and home page, hide when user is logged in -->
+  <div class="image">
+    <img src="https://www.pandotrip.com/wp-content/uploads/2013/07/irena.jpg" alt="Mountain View">
+    <h1 id="title">Track your Trails</h1>
+    <h3 id="sub-heading">An app to help you track your trails. Are you ready for your next adventure?</h3>
+    <!-- <div class="sign-up">
+      <h4 id="sign-up"> New user? Sign-up <a href="">here</a></h4>
+    </div> -->
+  </div>
+
+  <form class="sign-up-form">
+    <input name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
+    <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password">
+    <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
+    <input type="submit" name="submit" class="btn-primary btn" value="Sign up">
+  </form>
+
 </body>
 
 </html>
