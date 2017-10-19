@@ -14,7 +14,7 @@
 </head>
 
 <!-- nav bar -->
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Track your Trails</a>
@@ -30,7 +30,7 @@
       </div>
     </ul>
   </div>
-</nav>
+</nav> -->
 
 <body class="container-fluid">
   <!-- image and home page, hide when user is logged in -->
@@ -48,6 +48,12 @@
     <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password">
     <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
     <input type="submit" name="submit" class="btn-primary btn" value="Sign up">
+  </form>
+
+  <form class="sign-in-form">
+    <input name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
+    <input name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
+    <input type="submit" name="submit" class="btn-primary btn" value="Sign in">
   </form>
 
 </body>
