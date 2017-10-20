@@ -1,14 +1,20 @@
 {{#each hikes as |hike|}}
   <div>
-  <ul data-id="{{hike.id}}">
-    <h3>{{hike.hike_date}}</h3>
-    <h3>{{hike.hike_name}}</h3>
+    <table class="table table-hover table-bordered table-condensed">
+      <tbody data-id="{{hike.id}}">
+	      <tr id="row-select">
+          <td>{{hike.id}}</td>
+          <td>{{hike.hike_date}}</td>
+	        <td>{{hike.hike_name}}</td>
+	       </tr>
+	    </tbody>
+	   </table>
+
     <!-- <li>{{#if book.description}}
       {{book.description}}
     {{else}}
       No description.
     {{/if}}</li> -->
     <!-- <li><button class="removeBookButton" class="btn btn-default">Remove</button></li> -->
-  </ul>
   </div>
 {{/each}}

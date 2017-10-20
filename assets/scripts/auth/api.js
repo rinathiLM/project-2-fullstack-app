@@ -11,7 +11,7 @@ const signUp = function (data) {
   })
 }
 
-const signIn = function (data) {
+const signIn = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -19,7 +19,7 @@ const signIn = function (data) {
   })
 }
 
-const changePassword = function (data) {
+const changePassword = (data) => {
   // console.log('data is', data)
   // console.log(store.user.id)
   return $.ajax({
@@ -32,7 +32,7 @@ const changePassword = function (data) {
   })
 }
 
-const signOut = function () {
+const signOut = () => {
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     headers: {

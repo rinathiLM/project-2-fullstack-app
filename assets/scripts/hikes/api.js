@@ -16,9 +16,9 @@ const createHike = function (data) {
   })
 }
 
-const updateHike = function (data) {
+const updateHike = function (data, id) {
   return $.ajax({
-    url: config.apiOrigin + '/hikes/' + store.hike.id,
+    url: config.apiOrigin + '/hikes/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -37,9 +37,10 @@ const getHikes = function () {
   })
 }
 
-const deleteHike = function () {
+const deleteHike = function (hikeId) {
+  console.log(hikeId)
   return $.ajax({
-    url: config.apiOrigin + '/hikes#delete/' + store.hike.id,
+    url: config.apiOrigin + '/hikes/' + hikeId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

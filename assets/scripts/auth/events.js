@@ -45,6 +45,14 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+// const onSignOut = function (event) {
+//   event.preventDefault()
+//   // console.log('signed out')
+//   authApi.signOut()
+//     .then(authUi.signOutSuccess)
+//     .catch(authUi.signInFailure)
+// }
+
 const addHandlers = function () {
   $('.sign-up-form').on('submit', onSignUp)
   $('.sign-in-form').on('submit', onSignIn)
