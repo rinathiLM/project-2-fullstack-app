@@ -35,7 +35,7 @@
 <body class="container-fluid">
   <!-- image and home page, hide when user is logged in -->
   <div class="image">
-    <img src="https://www.pandotrip.com/wp-content/uploads/2013/07/irena.jpg" alt="Mountain View">
+    <img id="background" src="https://www.pandotrip.com/wp-content/uploads/2013/07/irena.jpg" alt="Mountain View">
     <h1 id="title">Track your Trails</h1>
     <h3 id="sub-heading">An app to help you track your trails. Are you ready for your next adventure?</h3>
     <!-- <div class="sign-up">
@@ -44,17 +44,51 @@
   </div>
 
   <form class="sign-up-form">
-    <input name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
-    <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password">
-    <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
-    <input type="submit" name="submit" class="btn-primary btn" value="Sign up">
+    <fieldset>
+      <input name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
+      <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password">
+      <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
+      <input type="submit" name="submit" class="btn-primary btn" value="Sign up">
+    </fieldset>
   </form>
 
   <form class="sign-in-form">
-    <input name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
-    <input name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
-    <input type="submit" name="submit" class="btn-primary btn" value="Sign in">
+    <fieldset>
+      <input name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
+      <input name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
+      <input type="submit" name="submit" class="btn-primary btn" value="Sign in">
+    </fieldset>
   </form>
+
+  <form class="change-pwd-form">
+    <fieldset>
+      <input name="passwords[old]" type="password" id="old-pwd" placeholder="Enter old password">
+      <input name="passwords[new]" type="password" id="new-pwd" placeholder="Enter new password">
+      <input type="submit" name="submit" class="btn-primary btn" id="confirm" value="Confirm password change">
+    </fieldset>
+  </form>
+
+  <form class="create-hike-form">
+    <fieldset>
+      <input name="hike[hike_date]" type="text" id="date" placeholder="date of hike(YYYY-MM-DD)" required>
+      <input name="hike[hike_name]" type="text" id="name" placeholder="hike name" required>
+      <input name="hike[city]" type="text" id="city" placeholder="city" required>
+      <input name="hike[state]" type="text" id="state" placeholder="state" required>
+      <input name="hike[elevation_gain]" type="text" id="elevation" placeholder="elevation gain" required>
+      <input name="hike[miles_rt]" type="text" id="miles" placeholder="miles roundtrip" required>
+      <input name="hike[duration]" type="text" id="duration" placeholder="hike duration" required>
+      <input name="hike[difficulty]" type="text" id="difficulty" placeholder="difficulty rating(1-5)" required>
+      <input name="hike[rating]" type="text" id="rating" placeholder="overall rating(1-5)" required>
+      <input name="hike[notes]" type="text" id="notes" placeholder="enter any notes">
+      <input type="submit" name="submit" class="btn-primary btn" id="confirm-hike" value="Submit">
+    </fieldset>
+  </form>
+
+  <input type="submit" name="get-all-hikes" class="btn-primary btn" id="get-hikes" value="See my hikes">
+  <div class="hike-collection">
+  <div id="content" class="content">
+  </div>
+  <input type="submit" name="sign-out" class="btn-primary btn" id="sign-out" value="Sign out">
 
 </body>
 

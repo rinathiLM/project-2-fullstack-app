@@ -3,7 +3,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .image {
   position: relative;
-  width: 100%;
 }
 
 #title {
@@ -36,4 +35,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
    left: 50%;
    width: 100%;
    transform: translate(-50%, -50%);
+}
+
+.container-fluid {
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }

@@ -3,34 +3,33 @@
 const config = require('../config')
 const store = require('../store')
 
-const createHike = function () {
-  // console.log('new game created')
-  // console.log(game.game)
+const createHike = function (data) {
+  console.log('hike created')
+  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/hikes',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 
 const updateHike = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/hikes#patch/' + store.hike.id,
+    url: config.apiOrigin + '/hikes/' + store.hike.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      // fill in hike data here
-    }
+    data
   })
 }
 
 const getHikes = function () {
   return $.ajax({
-    url: config.apiOrigin + '/hikes#show',
+    url: config.apiOrigin + '/hikes',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -38,13 +37,13 @@ const getHikes = function () {
   })
 }
 
-const deleteHikes = function () {
+const deleteHike = function () {
   return $.ajax({
-    url: config.apiOrigin + '/hikes#delete/' + store.user.id,
+    url: config.apiOrigin + '/hikes#delete/' + store.hike.id,
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    method: 'DELETE'
+    }
   })
 }
 
@@ -52,5 +51,5 @@ module.exports = {
   createHike,
   updateHike,
   getHikes,
-  deleteHikes
+  deleteHike
 }

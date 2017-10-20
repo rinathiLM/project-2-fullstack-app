@@ -3,55 +3,34 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   console.log('Sign up button clicked successfully')
-  // $('#home-page-message').text('You signed up successfully! Please sign into your new account to start playing!')
-  // $('.sign-up-functionality').hide()
-  // $('.sign-in-functionality').show()
+  $('.sign-up-form').hide()
 }
 
 const signUpFailure = function () {
   console.log('Sign up button clicked failure')
   console.error()
-  // $('#home-page-message').text('There was an error signing up, please try again.')
-  // $('#sign-up-name').val('')
-  // $('#sign-up-pwd').val('')
-  // $('#sign-up-pwd-2').val('')
 }
 
 const signInSuccess = function (data) {
-  // console.log('Signed in successfully')
   store.user = data.user
-  // console.log(data)
-  // console.log(data.user)
-  // $('#home-page-message').text('')
-  // $('#logged-in-message').text('What would you like to do now?')
-  // $('.sign-up-functionality').hide()
-  // $('.sign-in-functionality').hide()
-  // $('#change-password-button').show()
-  // $('.new-game').show()
-  // $('.stats').show()
-  // $('.sign-out').show()
+  console.log('Signed in successfully')
+  console.log(data)
+  $('.sign-in-form').hide()
+  // show change-password fields
+  // show hiking fields
 }
 
 const signInFailure = function () {
-  // console.error(error)
-  // $('#home-page-message').text('There was an error signing in, please try again.')
-  // $('#sign-in-name').val('')
-  // $('#sign-in-pwd').val('')
+  console.error('Signed in failure')
 }
 
 const changePasswordSuccess = function () {
-  // console.log('Changed password successfully')
-  // $('#logged-in-message').text('Changed password successfully. What would you like to do now?')
-  // $('#unhide-change-password').hide()
-  // $('#change-password-button').show()
-  // $('.sign-out').show()
-  // $('.new-game').show()
-  // $('.stats').show()
+  console.log('Changed password successfully')
+  $('.change-pwd-form').hide()
 }
 
 const changePasswordFailure = function () {
-  // console.error(error)
-  // $('#logged-in-message').text('There was an error, please try updating your password again.')
+  console.error('Change password failure')
 }
 
 const signOutSuccess = function () {
