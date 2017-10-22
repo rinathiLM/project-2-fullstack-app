@@ -20,20 +20,6 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-// const onChangePasswordClick = function (event) {
-//   event.preventDefault()
-//   // console.log('button clicked')
-//   $('#logged-in-message').text('')
-//   $('#change-password-button').hide()
-//   $('#unhide-change-password').show()
-//   $('.home').show()
-//   $('.new-game').hide()
-//   $('.stats').hide()
-//   $('.sign-out').hide()
-//   $('#old-pwd').val('')
-//   $('#new-pwd').val('')
-// }
-
 const onChangePassword = function (event) {
   event.preventDefault()
   // console.log('confirm password clicked')

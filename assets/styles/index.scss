@@ -5,6 +5,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   position: relative;
 }
 
+.create-hike-form {
+  display: table;
+}
+
+.change-pwd-form,
+#new-hike-button,
+#get-hikes,
+#sign-out {
+  display: none;
+}
+
 #title {
    color: white;
    font-family: 'Helvetica Neue', sans-serif;
@@ -27,14 +38,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   transform: translate(-50%, -50%);
 }
 #sign-up {
-   color: white;
-   font-family: 'Helvetica Neue', sans-serif;
-   position: absolute;
-   text-align: center;
-   top: 70%;
-   left: 50%;
-   width: 100%;
-   transform: translate(-50%, -50%);
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  position: absolute;
+  text-align: center;
+  top: 70%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
 }
 
 .container-fluid {

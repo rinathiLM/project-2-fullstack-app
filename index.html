@@ -44,22 +44,17 @@
   </div>
 
   <form class="sign-up-form">
-    <fieldset>
-        <!-- make type email after testing.. -->
-      <input name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
-      <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password">
-      <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
-      <input type="submit" name="submit" class="btn-primary btn" value="Sign up">
-    </fieldset>
+    <!-- make type email after testing.. -->
+    <input name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
+    <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password"> <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
+    <input type="submit" name="submit" class="btn-primary btn" value="Sign up">
   </form>
 
   <form class="sign-in-form">
-    <fieldset>
-      <!-- make type email after testing.. -->
-      <input name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
-      <input name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
-      <input type="submit" name="submit" class="btn-primary btn" value="Sign in">
-    </fieldset>
+    <!-- make type email after testing.. -->
+    <input name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
+    <input name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
+    <input type="submit" name="submit" class="btn-primary btn" value="Sign in">
   </form>
 
   <form class="change-pwd-form">
@@ -70,37 +65,52 @@
     </fieldset>
   </form>
 
-  <form class="create-hike-form">
-    <fieldset>
-      <input name="hike[hike_date]" type="date" id="date" placeholder="date of hike" required>
-      <input name="hike[hike_name]" type="text" id="name" placeholder="hike name" required>
-      <input name="hike[city]" type="text" id="city" placeholder="city" required>
-      <input name="hike[state]" type="text" id="state" placeholder="state" required>
-      <input name="hike[elevation_gain]" type="text" id="elevation" placeholder="elevation gain" required>
-      <input name="hike[miles_rt]" type="text" id="miles" placeholder="miles roundtrip" required>
-      <input name="hike[duration]" type="text" id="duration" placeholder="hike duration" required>
-      <input name="hike[difficulty]" type="text" id="difficulty" placeholder="difficulty rating(1-5)" required>
-      <input name="hike[rating]" type="text" id="rating" placeholder="overall rating(1-5)" required>
-      <input name="hike[notes]" type="text" id="notes" placeholder="enter any notes">
-      <input type="submit" name="submit" class="btn-primary btn" id="confirm-hike" value="Submit">
-    </fieldset>
-  </form>
+  <!-- create hike button trigger modal -->
+  <button type="button" class="new-hike-button btn btn-primary" id="new-hike-button" data-toggle="modal" data-target="#create-hike-modal">Submit a new hike</button>
 
-  <input type="submit" name="get-all-hikes" class="btn-primary btn" id="get-hikes" value="See my hikes">
-  <!-- <form class="update-hike-form">
-    <fieldset>
-      <input name="hike[id]" type="text" id="id" placeholder="hike id" required>
-      <input type="submit" name="update-a-hike" class="btn-primary btn" id="update-hike" value="Update a hike">
-    </fieldset>
-  </form> -->
-  <form class="delete-hike-form">
-    <fieldset>
-      <input name="hike[id]" type="text" id="id" placeholder="ID of hike" required>
-      <input type="submit" name="submit" class="btn-primary btn" value="Delete a hike">
-    </fieldset>
-  </form>
+  <!-- Modal -->
+  <div class="modal fade" id="create-hike-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modalLabel">Input your recent hike!</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="create-hike-form">
+            <div>
+              <label>Date of hike: <input name="hike[hike_date]" type="date" id="date" placeholder="date of hike" required></label><br>
+              <label>Hike name: <input name="hike[hike_name]" type="text" id="name" placeholder="hike name" required></label><br>
+              <label>City: <input name="hike[city]" type="text" id="city" placeholder="city" required></label><br>
+              <label>State: <input name="hike[state]" type="text" id="state" placeholder="state" required></label><br>
+              <label>Elevation gain: <input name="hike[elevation_gain]" type="text" id="elevation" placeholder="elevation gain" required></label><br>
+              <label>Miles roundtrip: <input name="hike[miles_rt]" type="text" id="miles" placeholder="miles roundtrip" required></label><br>
+              <label>Hike duration: <input name="hike[duration]" type="text" id="duration" placeholder="hike duration" required></label><br>
+              <label>Difficulty: <input name="hike[difficulty]" type="text" id="difficulty" placeholder="difficulty rating(1-5)" required></label><br>
+              <label>Rating: <input name="hike[rating]" type="text" id="rating" placeholder="overall rating(1-5)" required></label><br>
+              <label>Notes: <input name="hike[notes]" type="text" id="notes" placeholder="enter any notes"></label>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
 
-  <table class="table table-bordered table-condensed">
+  <!-- message of hike created success -->
+  <div id="hike-created-message"></div><br>
+
+  <!-- button to get all hikes user has gone on -->
+  <input type="submit" name="get-all-hikes" class="btn-primary btn" id="get-hikes" value="See my hikes"><br>
+
+  <!-- header for hikes table -->
+  <!-- <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Hike ID</th>
@@ -108,56 +118,24 @@
         <th>Hike Name</th>
       </tr>
     </thead>
-  </table>
-    <div class="hike-collection">
-      <div id="content" class="content">
-      </div>
-    </div>
-  <br>
-  <br>
-  <input type="submit" name="sign-out" class="btn-primary btn" id="sign-out" value="Sign out">
+  </table> -->
 
-  <!-- button to open update hike modal -->
-  <div class="btn-container">
-    <button type="button" class="btn-primary btn" id="update-hike-button" data-target="#update-hike-modal">
-      Update hike</button>
-      <!-- had to remove data-toggle="modal" so that it didn't keep closing automatically -->
-    <!-- <button type="button" class="view-cities-button btn-primary btn-lg">View Cities</button> -->
-  </div><br/>
-
-  <!-- modal to update hike once button is clicked -->
-  <div class="modal fade" id="update-hike-modal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Input the fields you would like to update</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      <div class="modal-body">
-        <form class="delete-hike-form">
-          <fieldset>
-            <label>Date of hike: <input name="hike[hike_date]" type="date" placeholder="date of hike"></label><br>
-            <label>Hike name: <input name="hike[hike_name]" type="text" placeholder="hike name"></label><br>
-            <label>City: <input name="hike[city]" type="text" placeholder="city"></label><br>
-            <label>State: <input name="hike[state]" type="text" placeholder="state"></label><br>
-            <label>Elevation gain: <input name="hike[elevation_gain]" type="text" placeholder="elevation gain"></label><br>
-            <label>Miles roundtrip: <input name="hike[miles_rt]" type="text" placeholder="miles roundtrip"></label><br>
-            <label>Duration of hike: <input name="hike[duration]" type="text" placeholder="hike duration"></label><br>
-            <label>Difficullty: <input name="hike[difficulty]" type="text" placeholder="difficulty rating(1-5)"></label><br>
-            <label>Rating: <input name="hike[rating]" type="text" placeholder="overall rating(1-5)"></label><br>
-            <label>Notes: <textarea name="hike[notes]" placeholder="enter any notes"></textarea></label>
-          </fieldset>
-        </form>
-      </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Update</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        </div>
-      </div>
-    </div>
+  <!-- list of hikes that will populate via handlebars-->
+  <div class="hike-collection">
+    <div id="content" class="content"></div>
   </div>
+  <br>
+
+  <!-- delete hike -->
+  <!-- <form class="delete-hike-form">
+    <fieldset>
+      <input name="hike[id]" type="text" id="id" placeholder="ID of hike" required>
+      <input type="submit" name="submit" class="btn-primary btn" value="Delete a hike">
+    </fieldset>
+  </form> -->
+
+  <!-- sign-out functionality -->
+  <input type="submit" name="sign-out" class="btn-primary btn" id="sign-out" value="Sign out">
 
 </body>
 

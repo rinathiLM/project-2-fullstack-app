@@ -4,6 +4,7 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   console.log('Sign up button clicked successfully')
   $('.sign-up-form').hide()
+  $('.sign-in-form').show()
 }
 
 const signUpFailure = function () {
@@ -16,8 +17,11 @@ const signInSuccess = function (data) {
   console.log('Signed in successfully')
   console.log(data)
   $('.sign-in-form').hide()
-  // show change-password fields
-  // show hiking fields
+  $('.sign-up-form').hide()
+  $('.change-pwd-form').show()
+  $('#sign-out').show()
+  $('#new-hike-button').show()
+  $('#get-hikes').show()
 }
 
 const signInFailure = function () {

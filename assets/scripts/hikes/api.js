@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createHike = function (data) {
-  console.log('hike created')
+  console.log('made it to hike created api')
   console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/hikes',
@@ -16,9 +16,9 @@ const createHike = function (data) {
   })
 }
 
-const updateHike = function (data, id) {
+const updateHike = function (data, hikeId) {
   return $.ajax({
-    url: config.apiOrigin + '/hikes/' + id,
+    url: config.apiOrigin + '/hikes/' + hikeId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

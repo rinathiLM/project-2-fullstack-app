@@ -1,20 +1,56 @@
 {{#each hikes as |hike|}}
-  <div>
-    <table class="table table-hover table-bordered table-condensed">
-      <tbody data-id="{{hike.id}}">
-	      <tr id="row-select">
-          <td>{{hike.id}}</td>
-          <td>{{hike.hike_date}}</td>
-	        <td>{{hike.hike_name}}</td>
-	       </tr>
-	    </tbody>
-	   </table>
 
-    <!-- <li>{{#if book.description}}
-      {{book.description}}
-    {{else}}
-      No description.
-    {{/if}}</li> -->
-    <!-- <li><button class="removeBookButton" class="btn btn-default">Remove</button></li> -->
+  <div data-id="{{hike.id}}">
+    <table class="table table-hover table-bordered table-condensed">
+      <tr>
+        <td>{{hike.hike_date}}</td>
+        <td>{{hike.hike_name}}</td>
+        <td>{{hike.city}}</td>
+        <td>{{hike.state}}</td>
+        <td>{{hike.elevation_gain}}</td>
+        <td>{{hike.miles_rt}}</td>
+        <td>{{hike.duration}}</td>
+        <td>{{hike.difficulty}}</td>
+        <td>{{hike.rating}}</td>
+        <td>{{hike.notes}}</td>
+        <td><button class="btn-primary btn" data-id="{{hike.id}}" id="update-hike-button" data-toggle="modal" data-target="#update-hike-modal{{hike.id}}">Update</button></td>
+        <td><button class="btn-primary btn" data-id="{{hike.id}}" id="delete-hike-button">Delete</button></td>
+      </tr>
+    </table>
   </div>
+
+  <!-- modal to update hike once button is clicked -->
+  <div class="modal fade" id="update-hike-modal{{hike.id}}" class="update-hike-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Input the fields you would like to update</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+        </div>
+        <form class="update-hike-form" id="update-hike-form" data-id="{{hike.id}}">
+          <div class="modal-body">
+            <fieldset>
+              <label>Date of hike: <input name="hike[hike_date]" type="date" value={{hike.hike_date}}></label><br>
+              <label>Hike name: <input name="hike[hike_name]" type="text" value={{hike.hike_name}}></label><br>
+              <label>City: <input name="hike[city]" type="text" value={{hike.city}}></label><br>
+              <label>State: <input name="hike[state]" type="text" value={{hike.state}}></label><br>
+              <label>Elevation gain: <input name="hike[elevation_gain]" type="text" value={{hike.elevation_gain}}></label><br>
+              <label>Miles roundtrip: <input name="hike[miles_rt]" type="text" value={{hike.miles_rt}}></label><br>
+              <label>Duration of hike: <input name="hike[duration]" type="text" value={{hike.duration}}></label><br>
+              <label>Difficullty: <input name="hike[difficulty]" type="text" value={{hike.difficulty}}></label><br>
+              <label>Rating: <input name="hike[rating]" type="text" value={{hike.rating}}></label><br>
+              <label>Notes: <textarea name="hike[notes]" value={{hike.notes}}></textarea></label>
+            </fieldset>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" class="update-button-clicked">Update</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 {{/each}}
