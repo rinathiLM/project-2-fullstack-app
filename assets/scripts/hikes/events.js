@@ -5,7 +5,7 @@ const ui = require('./ui')
 const onCreateHike = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
+  // console.log(data)
   api.createHike(data)
     .then(ui.createHikeSuccess)
     .catch(ui.createHikeFailure)
@@ -17,15 +17,15 @@ const onGetAllHikes = function (event) {
     .then(ui.getHikesSuccess)
     // had to do the below so that all of these run before my handlebars since the button functionality relies on the below
     .then(() => $('.update-hike-form').on('submit', onUpdateHike))
-    .then(() => $('.delete-hike-button').on('click', onDeleteHike))
+    .then(() => $('.delete-hike-link').on('click', onDeleteHike))
     .catch(ui.getHikesFailure)
 }
 
 const onDeleteHike = function (event) {
   event.preventDefault()
-  console.log('delete hike button clicked')
+  console.log('delete hike clicked')
   // have to get the hike ID that I want to delete
-  const hikeId = $(this).data('id')
+  const hikeId = $(event.target).data('id')
   console.log(hikeId)
   api.deleteHike(hikeId)
     .then(ui.deleteHikeSuccess(hikeId))
@@ -55,7 +55,6 @@ const addHandlers = function () {
   $('.create-hike-form').on('submit', onCreateHike)
   $('#get-hikes').on('click', onGetAllHikes)
   $('#hide-hikes').on('click', onHideHikes)
-  $('#delete-hike-button').on('click', onDeleteHike)
   $('#update-hike-modal').on('click', onUpdateHike)
 }
 

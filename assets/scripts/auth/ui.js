@@ -2,15 +2,11 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  console.log('Sign up button clicked successfully')
+  // console.log('Sign up button clicked successfully')
   $('#sign-up-modal-label').text('You successfully created an account, close this box and log in!')
   $('.sign-up-modal-body').hide()
-  // hiding html elements in first page
-  $('#title').hide()
-  $('#sub-heading').hide()
-  $('.sign-up').hide()
-  // show  sign form -- later to be changed to a nav bar..
-  $('.sign-in-form').show()
+  // hiding html elements in home page
+  $('.heading').hide()
 }
 
 const signUpFailure = function () {
@@ -20,14 +16,13 @@ const signUpFailure = function () {
 
 const signInSuccess = function (data) {
   store.user = data.user
-  console.log('Signed in successfully')
-  console.log(data)
-  $('.sign-in-form').hide()
-  $('.sign-up-form').hide()
-  $('.change-pwd-form').show()
-  $('#sign-out').show()
-  $('#new-hike-button').show()
-  $('#get-hikes').show()
+  // console.log('Signed in successfully')
+  // console.log(data)
+  // hiding html elements in home page
+  $('.heading').hide()
+  // show  elements after logged in
+  $('.new-hike-button').show()
+  $('.get-hikes').show()
 }
 
 const signInFailure = function () {

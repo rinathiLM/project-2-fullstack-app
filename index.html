@@ -13,49 +13,49 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
-<!-- nav bar -->
-<nav class="navbar navbar-default navbar-fixed-top">
-<div class="container">
-    <div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<!-- <a class="navbar-brand" href="#"><img src="bs-logo.png"></a> -->
-	</div>
-	<div class="collapse navbar-collapse" id="myNavbar">
-		<ul class="nav navbar-nav">
-			<li style="padding: 15px; padding-bottom: 10px;">Track your Trails</li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Login</a>
-				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
-				<form class="sign-in-form" method="post" accept-charset="UTF-8">
-          <!-- make type email after testing.. -->
-          <input class="form-control login" name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
-          <input class="form-control login" name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
-				  <input class="btn-primary btn" type="submit" name="submit" value="Login" />
-				</form>
-				</div>
-			</li>
-      <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Change password</a>
-				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
-				<form class="change-pwd-form" method="post" accept-charset="UTF-8">
-          <!-- make type email after testing.. -->
-          <input class="form-control login" name="passwords[old]" type="password" id="old-pwd" placeholder="Enter old password">
-          <input class="form-control login" name="passwords[new]" type="password" id="new-pwd" placeholder="Enter new password">
-				  <input class="btn-primary btn" type="submit" name="submit" value="Change Password" />
-				</form>
-				</div>
-			</li>
-      <li style="padding: 15px; padding-bottom: 10px;" class="">Logout</li>
-		</ul>
-	</div>
-</div>
-</nav>
-
 <body class="container-fluid">
+  <!-- nav bar -->
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <!-- <nav class="navbar navbar-light navbar-fixed-top"> style="background-color: #e3f2fd;" -->
+  <div class="container">
+    <div class="navbar-header">
+  		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  		</button>
+  	</div>
+  	<div class="collapse navbar-collapse" id="myNavbar">
+  		<ul class="nav navbar-nav">
+  			<li style="padding: 15px; padding-bottom: 10px;">Track your Trails</li>
+  		</ul>
+  		<ul class="nav navbar-nav navbar-right">
+  			<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Login</a>
+  				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
+  				<form class="sign-in-form" method="post" accept-charset="UTF-8">
+            <!-- make type email after testing.. -->
+            <input class="form-control login" name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
+            <input class="form-control login" name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
+  				  <input class="btn-primary btn" type="submit" name="submit" value="Login" />
+  				</form>
+  				</div>
+  			</li>
+        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Change password</a>
+  				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
+  				<form class="change-pwd-form" method="post" accept-charset="UTF-8">
+            <!-- make type email after testing.. -->
+            <input class="form-control login" name="passwords[old]" type="password" id="old-pwd" placeholder="Enter old password">
+            <input class="form-control login" name="passwords[new]" type="password" id="new-pwd" placeholder="Enter new password">
+  				  <input class="btn-primary btn" type="submit" name="submit" value="Change Password" />
+  				</form>
+  				</div>
+  			</li>
+        <li style="padding: 15px; padding-bottom: 10px;" class="">Logout</li>
+  		</ul>
+  	</div>
+  </div>
+  </nav>
+
   <!-- image and home page, hide when user is logged in -->
     <div class="heading">
       <h1 id="title">Track your Trails</h1>
@@ -80,9 +80,9 @@
           <form class="sign-up-form">
             <div>
               <!-- make type email after testing.. -->
-              <input class="form-control login" name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
-              <input class="form-control login" name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password">
-              <input class="form-control login" name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
+              <input name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
+              <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password">
+              <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
             </div>
             <div class="modal-footer">
               <button class="btn btn-primary">Sign up</button>
@@ -95,8 +95,17 @@
     </div>
   </div>
 
+  <!-- user messages -->
+  <div id="hike-messages"></div><br>
+
+  <!-- button to hide all hikes shown -->
+  <input type="submit" name="hide-all-hikes" class="btn-primary btn" id="hide-hikes" value="Hide my hikes"><br>
+
+  <!-- button to get all hikes user has gone on -->
+  <input type="submit" name="get-all-hikes" class="btn-primary btn" id="get-hikes" value="See my hikes"><br>
+
   <!-- create hike button trigger modal -->
-  <button type="button" class="new-hike-button btn btn-primary" id="new-hike-button" data-toggle="modal" data-target="#create-hike-modal">Submit a new hike</button>
+  <button type="button" class="new-hike-button btn btn-primary" data-toggle="modal" data-target="#create-hike-modal">Submit a new hike</button>
 
   <!-- Modal -->
   <div class="modal fade" id="create-hike-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -110,7 +119,7 @@
         </div>
         <div class="modal-body">
           <form class="create-hike-form">
-            <div>
+            <div class="form-group">
               <label>Date of hike: <input name="hike[hike_date]" type="date" id="date" required></label><br>
               <label>Hike name: <input name="hike[hike_name]" type="text" id="name" required></label><br>
               <label>City: <input name="hike[city]" type="text" id="city" required></label><br>
@@ -134,34 +143,34 @@
   </div>
   <br>
 
-  <!-- user messages -->
-  <div id="hike-messages"></div><br>
-
-  <!-- button to get all hikes user has gone on -->
-  <input type="submit" name="get-all-hikes" class="btn-primary btn" id="get-hikes" value="See my hikes"><br>
-
-  <!-- button to hide all hikes shown -->
-  <input type="submit" name="hide-all-hikes" class="btn-primary btn" id="hide-hikes" value="Hide my hikes"><br>
-
-  <!-- header for hikes table -->
-  <!-- <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Hike ID</th>
-        <th>Date Hiked</th>
-        <th>Hike Name</th>
-      </tr>
-    </thead>
-  </table> -->
-
   <!-- list of hikes that will populate via handlebars-->
   <div class="hike-collection">
     <div id="content" class="content"></div>
   </div>
+
+  <!-- <table class="table table-hover">
+    <tr>
+      <th>Date</th>
+      <th>Hike Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Elevation gain</th>
+      <th>Miles roundtrip</th>
+      <th>Duration</th>
+      <th>Difficulty</th>
+      <th>Rating</th>
+      <th>Notes</th>
+    </tr>
+    <tr>
+      <td>
+        <div class="hike-collection">
+          <div id="content" class="content"></div>
+        </div>
+      </td>
+    </tr>
+  </table> -->
+
   <br>
-
-
-
 </body>
 
 </html>
