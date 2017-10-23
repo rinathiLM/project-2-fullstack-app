@@ -3,7 +3,7 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   console.log('Sign up button clicked successfully')
-  $('#sign-up-modal-label').text('You successfully created an account, close this box and sign in!')
+  $('#sign-up-modal-label').text('You successfully created an account, close this box and log in!')
   $('.sign-up-modal-body').hide()
   // hiding html elements in first page
   $('#title').hide()

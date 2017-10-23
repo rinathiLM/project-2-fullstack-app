@@ -14,35 +14,57 @@
 </head>
 
 <!-- nav bar -->
-<!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Track your Trails</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Log a hike</a></li>
-      <li><a href="#">See all your hikes</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <div class="hide-after-logged-in">
-        <li class="sign-in"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </div>
-    </ul>
-  </div>
-</nav> -->
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<!-- <a class="navbar-brand" href="#"><img src="bs-logo.png"></a> -->
+	</div>
+	<div class="collapse navbar-collapse" id="myNavbar">
+		<ul class="nav navbar-nav">
+			<li style="padding: 15px; padding-bottom: 10px;">Track your Trails</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Login</a>
+				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
+				<form class="sign-in-form" method="post" accept-charset="UTF-8">
+          <!-- make type email after testing.. -->
+          <input class="form-control login" name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
+          <input class="form-control login" name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
+				  <input class="btn-primary btn" type="submit" name="submit" value="Login" />
+				</form>
+				</div>
+			</li>
+      <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Change password</a>
+				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
+				<form class="change-pwd-form" method="post" accept-charset="UTF-8">
+          <!-- make type email after testing.. -->
+          <input class="form-control login" name="passwords[old]" type="password" id="old-pwd" placeholder="Enter old password">
+          <input class="form-control login" name="passwords[new]" type="password" id="new-pwd" placeholder="Enter new password">
+				  <input class="btn-primary btn" type="submit" name="submit" value="Change Password" />
+				</form>
+				</div>
+			</li>
+      <li style="padding: 15px; padding-bottom: 10px;" class="">Logout</li>
+		</ul>
+	</div>
+</div>
+</nav>
 
 <body class="container-fluid">
   <!-- image and home page, hide when user is logged in -->
-  <div class="image">
-    <img id="background" src="https://www.pandotrip.com/wp-content/uploads/2013/07/irena.jpg" alt="Mountain View">
-    <h1 id="title">Track your Trails</h1>
-    <h3 id="sub-heading">An app to help you track your trails. Are you ready for your next adventure?</h3>
-    <!-- sign-up link that opens a modal -->
-    <div class="sign-up">
-      <h4 id="sign-up"> New user? Sign-up <a data-toggle="modal" data-target="#sign-up-modal" href="#">here</a></h4>
+    <div class="heading">
+      <h1 id="title">Track your Trails</h1>
+      <h3 id="sub-heading">An app to help you track your trails. Are you ready for your next adventure?</h3>
+      <!-- sign-up link that opens a modal -->
+      <div class="sign-up">
+        <h4 id="sign-up"> New user? Sign-up <a data-toggle="modal" data-target="#sign-up-modal" href="#">here</a></h4>
+      </div>
     </div>
-  </div>
 
   <!--  sign-up modal -->
   <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -58,8 +80,9 @@
           <form class="sign-up-form">
             <div>
               <!-- make type email after testing.. -->
-              <input name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
-              <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password"> <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
+              <input class="form-control login" name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
+              <input class="form-control login" name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password">
+              <input class="form-control login" name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
             </div>
             <div class="modal-footer">
               <button class="btn btn-primary">Sign up</button>
@@ -71,21 +94,6 @@
       </div>
     </div>
   </div>
-
-  <form class="sign-in-form">
-    <!-- make type email after testing.. -->
-    <input name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
-    <input name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
-    <input type="submit" name="submit" class="btn-primary btn" value="Sign in">
-  </form>
-
-  <form class="change-pwd-form">
-    <fieldset>
-      <input name="passwords[old]" type="password" id="old-pwd" placeholder="Enter old password">
-      <input name="passwords[new]" type="password" id="new-pwd" placeholder="Enter new password">
-      <input type="submit" name="submit" class="btn-primary btn" id="confirm" value="Confirm password change">
-    </fieldset>
-  </form>
 
   <!-- create hike button trigger modal -->
   <button type="button" class="new-hike-button btn btn-primary" id="new-hike-button" data-toggle="modal" data-target="#create-hike-modal">Submit a new hike</button>
@@ -152,8 +160,7 @@
   </div>
   <br>
 
-  <!-- sign-out functionality -->
-  <input type="submit" name="sign-out" class="btn-primary btn" id="sign-out" value="Sign out">
+
 
 </body>
 
