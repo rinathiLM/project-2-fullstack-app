@@ -35,9 +35,9 @@ const onDeleteHike = function (event) {
 const onUpdateHike = function (event) {
   event.preventDefault()
   console.log('update modal button clicked')
-  const hikeId = $(this).data('id')
+  const hikeId = $(event.target).data('id')
   console.log('hike updating is', hikeId)
-  const updateHike = getFormFields(this)
+  const updateHike = getFormFields(event.target)
   console.log('updated info:', updateHike)
   api.updateHike(updateHike, hikeId)
     .then(ui.updateHikeSuccess(hikeId))

@@ -35,14 +35,10 @@ const deleteHikeFailure = () => {
   console.log('Failed to delete hike')
 }
 
-const hideUpdateModal = function (event) {
-  $('.update-hike-modal').modal('hide')
-}
-
 const updateHikeSuccess = (data) => {
   console.log('Successful update')
-  $('#hike-messages').text('Successfully updated hike!')
-  $('#update-button').on('click', hideUpdateModal)
+  $('.update-hike-modal-title').text('Your inputs have been updated!')
+  $('.update-modal-body').hide()
 }
 
 const updateHikeFailure = () => {
