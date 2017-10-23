@@ -4,7 +4,8 @@ const showHikesTemplate = require('../templates/hike-listing.handlebars')
 const createHikeSuccess = (data) => {
   console.log('Successfully created hike ', data)
   $('#create-hike-modal').modal('hide')
-  $('#hike-created-message').text('Successfully added hike! Click the "See my hikes" button to see all your entries.')
+  $('#create-hike-modal').empty()
+  $('#hike-messages').text('Successfully added hike! Click the "See my hikes" button to see all your entries.')
 }
 
 const createHikeFailure = () => {
@@ -17,15 +18,16 @@ const getHikesSuccess = (data) => {
   const showHikesHtml = showHikesTemplate({ hikes: data.hikes })
   $('.content').html(showHikesHtml)
   $('#get-hikes').hide()
+  $('#hide-hikes').show()
 }
 
 const getHikesFailure = () => {
   console.log('Failed to get all hikes')
 }
 
-const deleteHikeSuccess = () => {
-  console.log('Successfully deleted a hike')
-  // $('.delete-hike-form').hide()
+const deleteHikeSuccess = (id) => {
+  console.log('hike successfully deleted')
+  $("div[data-id='" + id + "']").remove()
 }
 
 const deleteHikeFailure = () => {
@@ -33,9 +35,10 @@ const deleteHikeFailure = () => {
 }
 
 const updateHikeSuccess = (data) => {
-  console.log('Successful udpate')
-  const showHikesHtml = showHikesTemplate({ hikes: data.hikes })
-  $('.content').html(showHikesHtml)
+  console.log('Successful update')
+  $('.update-hike-modal').modal('hide')
+//  const showHikesHtml = showHikesTemplate({ hikes: data.hikes })
+  // $('.content').html(showHikesHtml)
   // $('#update-hike-form').modal('hide')
 }
 
