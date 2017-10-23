@@ -32,14 +32,6 @@ const onDeleteHike = function (event) {
     .catch(ui.deleteHikeFailure)
 }
 
-// const onDeleteCity = function (event) {
-//   event.preventDefault()
-//   const cityId = $(this).data('id')
-//   api.deleteCity(cityId)
-//     .then(ui.deleteCitySuccess(cityId))
-//     .catch(ui.deleteCityFailure)
-// }
-
 const onUpdateHike = function (event) {
   event.preventDefault()
   console.log('update modal button clicked')
@@ -47,9 +39,9 @@ const onUpdateHike = function (event) {
   console.log('hike updating is', hikeId)
   const updateHike = getFormFields(this)
   console.log('updated info:', updateHike)
-  // api.updateHike(updateHike, hikeId)
-  //   .then(ui.updateHikeSuccess(hikeId))
-  //   .catch(ui.updateHikeFailure)
+  api.updateHike(updateHike, hikeId)
+    .then(ui.updateHikeSuccess(hikeId))
+    .catch(ui.updateHikeFailure)
 }
 
 const onHideHikes = function (event) {

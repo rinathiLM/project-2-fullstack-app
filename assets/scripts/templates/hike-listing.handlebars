@@ -13,36 +13,36 @@
         <td>{{hike.difficulty}}</td>
         <td>{{hike.rating}}</td>
         <td>{{hike.notes}}</td>
-        <td><button class="btn-primary btn" data-id="{{hike.id}}" id="update-hike-button" data-toggle="modal" data-target="#update-hike-modal{{hike.id}}">Update</button></td>
+        <td><button class="btn-primary btn" data-id="{{hike.id}}" cid="update-hike-button" data-toggle="modal" data-target="#update-hike-modal{{hike.id}}">Update</button></td>
         <td><button type="button" class="delete-hike-button btn-primary btn" data-id="{{hike.id}}">Delete</button></td>
       </tr>
     </table>
   </div>
 
   <!-- modal to update hike once button is clicked -->
-  <div class="modal fade" id="update-hike-modal{{hike.id}}" class="update-hike-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">>
+  <div class="modal fade" class="update-hike-modal" id="update-hike-modal{{hike.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Input the fields you would like to update</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                <span aria-hidden="true">&times;</span>
              </button>
+          <h5 class="modal-title">Input the fields you would like to update</h5>
         </div>
         <div class="modal-body">
           <form class="update-hike-form" data-id="{{hike.id}}">
-              <label>Date of hike: <input name="hike[hike_date]" type="date" value={{hike.hike_date}}></label><br>
-              <label>Hike name: <input name="hike[hike_name]" type="text" value={{hike.hike_name}}></label><br>
-              <label>City: <input name="hike[city]" type="text" value={{hike.city}}></label><br>
-              <label>State: <input name="hike[state]" type="text" value={{hike.state}}></label><br>
-              <label>Elevation gain: <input name="hike[elevation_gain]" type="text" value={{hike.elevation_gain}}></label><br>
-              <label>Miles roundtrip: <input name="hike[miles_rt]" type="text" value={{hike.miles_rt}}></label><br>
-              <label>Duration of hike: <input name="hike[duration]" type="text" value={{hike.duration}}></label><br>
-              <label>Difficullty: <input name="hike[difficulty]" type="number" min="1" max="5" value={{hike.difficulty}}></label><br>
-              <label>Rating: <input name="hike[rating]" type="number" min="1" max="5" value={{hike.rating}}></label><br>
-              <label>Notes: <textarea name="hike[notes]" value={{hike.notes}}></textarea></label>
+            <label>Date of hike: <input name="hike[hike_date]" type="date" value={{hike.hike_date}}></label><br>
+            <label>Hike name: <input name="hike[hike_name]" type="text" value={{hike.hike_name}}></label><br>
+            <label>City: <input name="hike[city]" type="text" value={{hike.city}}></label><br>
+            <label>State: <input name="hike[state]" type="text" value={{hike.state}}></label><br>
+            <label>Elevation gain: <input name="hike[elevation_gain]" type="text" value={{hike.elevation_gain}}></label><br>
+            <label>Miles roundtrip: <input name="hike[miles_rt]" type="text" value={{hike.miles_rt}}></label><br>
+            <label>Duration of hike: <input name="hike[duration]" type="text" value={{hike.duration}}></label><br>
+            <label>Difficullty: <input name="hike[difficulty]" type="number" min="1" max="5" value={{hike.difficulty}}></label><br>
+            <label>Rating: <input name="hike[rating]" type="number" min="1" max="5" value={{hike.rating}}></label><br>
+            <label>Notes: <textarea name="hike[notes]" value={{hike.notes}}></textarea></label>
             <div class="modal-footer">
-              <button class="btn btn-primary" data-id="{{hike.id}}">Update</button>
+              <button class="update-button btn btn-primary" data-id="{{hike.id}}">Update</button>
               <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
               <button type="reset" class="btn btn-secondary">Reset</button>
             </div>
