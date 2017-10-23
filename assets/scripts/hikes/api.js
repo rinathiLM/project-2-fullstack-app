@@ -38,7 +38,7 @@ const getHikes = function () {
 }
 
 const deleteHike = function (hikeId) {
-  console.log(hikeId)
+  console.log('api going to delete', hikeId)
   return $.ajax({
     url: config.apiOrigin + '/hikes/' + hikeId,
     method: 'DELETE',

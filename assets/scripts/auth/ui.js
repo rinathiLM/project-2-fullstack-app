@@ -38,28 +38,12 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  // console.log('Signed out successfully')
-  // store.user = null // setting this to null to clear out our user data
-  // $('#logged-in-message').text('')
-  // $('.sign-up-functionality').show()
-  // $('.sign-in-functionality').show()
-  // $('.sign-out').hide()
-  // $('.new-game').hide()
-  // $('.stats').hide()
-  // $('.display-game-board').hide()
-  // $('.home').hide()
-  // $('#change-password-button').hide()
-  // // have to clear out all the values from the sign-in/up screen
-  // $('#sign-in-name').val('')
-  // $('#sign-in-pwd').val('')
-  // $('#sign-up-name').val('')
-  // $('#sign-up-pwd').val('')
-  // $('#sign-up-pwd-2').val('')
+  console.log('Signed out successfully')
+  store.user = null
 }
 
 const signOutFailure = function () {
-//  console.error(error)
-  // $('#logged-in-message').text('Something is wrong, please try signing out again.')
+  console.log('Failed to sign out')
 }
 
 module.exports = {
