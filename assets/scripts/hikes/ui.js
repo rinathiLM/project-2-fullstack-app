@@ -26,9 +26,14 @@ const getHikesFailure = () => {
 }
 
 const deleteHikeSuccess = (id) => {
+<<<<<<< HEAD
   console.log('Successfully deleted a hike')
   $("div[data-id='" + id + "']").remove()
   // show message that you succssfully deleted name of hike
+=======
+  console.log('hike successfully deleted')
+  $("div[data-id='" + id + "']").remove()
+>>>>>>> hike-update-ui
 }
 
 const deleteHikeFailure = () => {
@@ -38,7 +43,13 @@ const deleteHikeFailure = () => {
 const updateHikeSuccess = (data) => {
   console.log('Successful update')
   $('.update-hike-modal').modal('hide')
+<<<<<<< HEAD
   $('#hike-messages').text('Successfully updated hike!')
+=======
+//  const showHikesHtml = showHikesTemplate({ hikes: data.hikes })
+  // $('.content').html(showHikesHtml)
+  // $('#update-hike-form').modal('hide')
+>>>>>>> hike-update-ui
 }
 
 const updateHikeFailure = () => {

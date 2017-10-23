@@ -39,6 +39,10 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   console.log('Signed out successfully')
+<<<<<<< HEAD
+=======
+  // setting this to null to clear out our user data
+>>>>>>> hike-update-ui
   store.user = null
 }
 
