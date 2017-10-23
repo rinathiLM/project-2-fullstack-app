@@ -38,17 +38,39 @@
     <img id="background" src="https://www.pandotrip.com/wp-content/uploads/2013/07/irena.jpg" alt="Mountain View">
     <h1 id="title">Track your Trails</h1>
     <h3 id="sub-heading">An app to help you track your trails. Are you ready for your next adventure?</h3>
-    <!-- <div class="sign-up">
-      <h4 id="sign-up"> New user? Sign-up <a href="">here</a></h4>
-    </div> -->
+    <!-- sign-up link that opens a modal -->
+    <div class="sign-up">
+      <h4 id="sign-up"> New user? Sign-up <a data-toggle="modal" data-target="#sign-up-modal" href="#">here</a></h4>
+    </div>
   </div>
 
-  <form class="sign-up-form">
-    <!-- make type email after testing.. -->
-    <input name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
-    <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password"> <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
-    <input type="submit" name="submit" class="btn-primary btn" value="Sign up">
-  </form>
+  <!--  sign-up modal -->
+  <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="sign-up-modal-label">Sign up below!</h4>
+        </div>
+        <div class="sign-up-modal-body">
+          <form class="sign-up-form">
+            <div>
+              <!-- make type email after testing.. -->
+              <input name="credentials[email]" id="sign-up-name" type="text" placeholder="Enter email">
+              <input name="credentials[password]" id="sign-up-pwd" type="password" placeholder="Enter password"> <input name="credentials[password_confirmation]" id="sign-up-pwd-2" type="password" placeholder="Confirm password">
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary">Sign up</button>
+              <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <form class="sign-in-form">
     <!-- make type email after testing.. -->

@@ -3,7 +3,13 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   console.log('Sign up button clicked successfully')
-  $('.sign-up-form').hide()
+  $('#sign-up-modal-label').text('You successfully created an account, close this box and sign in!')
+  $('.sign-up-modal-body').hide()
+  // hiding html elements in first page
+  $('#title').hide()
+  $('#sub-heading').hide()
+  $('.sign-up').hide()
+  // show  sign form -- later to be changed to a nav bar..
   $('.sign-in-form').show()
 }
 
