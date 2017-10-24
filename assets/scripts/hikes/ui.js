@@ -38,8 +38,8 @@ const deleteHikeFailure = () => {
 
 const updateHikeSuccess = (data) => {
   console.log('Successful update')
-  $('.update-hike-modal-title').text('You successfully updated your hike! Close this message to see your change(s).')
-  $('.update-modal-body').hide()
+  // $('.update-hike-modal-title').text('You successfully updated your hike! Close this message to see your change(s).')
+  // $('.update-modal-body').hide()
   $('#update-hike-modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
@@ -48,7 +48,6 @@ const updateHikeSuccess = (data) => {
 const updateHikeFailure = () => {
   console.log('Failed to update')
   $('.update-hike-modal-title').text('Something is wrong, please close this box and try again.')
-  $('.update-modal-body').hide()
 }
 
 module.exports = {
