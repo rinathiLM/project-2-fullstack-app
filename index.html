@@ -32,7 +32,7 @@
   		<ul class="nav navbar-nav navbar-right">
   			<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Login</a>
   				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
-  				<form class="sign-in-form" method="post" accept-charset="UTF-8">
+  				<form class="sign-in-form">
             <!-- make type email after testing.. -->
             <input class="form-control login" name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
             <input class="form-control login" name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
@@ -42,11 +42,11 @@
   			</li>
         <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Change password</a>
   				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
-  				<form class="change-pwd-form" method="post" accept-charset="UTF-8">
+  				<form class="change-pwd-form">
             <!-- make type email after testing.. -->
-            <input class="form-control login" name="passwords[old]" type="password" id="old-pwd" placeholder="Enter old password">
-            <input class="form-control login" name="passwords[new]" type="password" id="new-pwd" placeholder="Enter new password">
-  				  <input class="btn-primary btn" type="submit" name="submit" value="Change Password" />
+            <input class="form-control login" name="passwords[old]" type="password" id="old-pwd" placeholder="Old password">
+            <input class="form-control login" name="passwords[new]" type="password" id="new-pwd" placeholder="New password">
+  				  <input class="btn-primary btn" type="submit" name="submit" value="Confirm" />
   				</form>
   				</div>
   			</li>
@@ -58,11 +58,11 @@
 
   <!-- image and home page, hide when user is logged in -->
     <div class="heading">
-      <h1 id="title">Track your Trails</h1>
-      <h3 id="sub-heading">An app to help you track your trails. Are you ready for your next adventure?</h3>
+      <h1 id="title"><span>Track your Trails</span></h1>
+      <h3 id="sub-heading"><span>An app to help you track your trails. Are you ready for your next adventure?</span></h3>
       <!-- sign-up link that opens a modal -->
       <div class="sign-up">
-        <h4 id="sign-up"> New user? Sign-up <a data-toggle="modal" data-target="#sign-up-modal" href="#">here</a></h4>
+        <h4 id="sign-up"><span>New user? Sign-up <a data-toggle="modal" data-target="#sign-up-modal" href="#">here</a></span></h4>
       </div>
     </div>
 
@@ -115,7 +115,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title" id="modalLabel">Input your recent hike!</h4>
+          <h4 class="create-hike-modal-title" id="modalLabel">Input your recent hike!</h4>
         </div>
         <div class="modal-body">
           <form class="create-hike-form">
