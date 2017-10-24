@@ -15,56 +15,58 @@
 
 <body class="container-fluid">
   <!-- nav bar -->
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <!-- <nav class="navbar navbar-light navbar-fixed-top"> style="background-color: #e3f2fd;" -->
-  <div class="container">
-    <div class="navbar-header">
-  		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-  			<span class="icon-bar"></span>
-  			<span class="icon-bar"></span>
-  			<span class="icon-bar"></span>
-  		</button>
-  	</div>
-  	<div class="collapse navbar-collapse" id="myNavbar">
-  		<ul class="nav navbar-nav">
-  			<li style="padding: 15px; padding-bottom: 10px;">Track your Trails</li>
-  		</ul>
-  		<ul class="nav navbar-nav navbar-right">
-  			<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Login</a>
-  				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
-  				<form class="sign-in-form">
-            <!-- make type email after testing.. -->
-            <input class="form-control login" name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
-            <input class="form-control login" name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
-  				  <input class="btn-primary btn" type="submit" name="submit" value="Login" />
-  				</form>
-  				</div>
-  			</li>
-        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Change password</a>
-  				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
-  				<form class="change-pwd-form">
-            <!-- make type email after testing.. -->
-            <input class="form-control login" name="passwords[old]" type="password" id="old-pwd" placeholder="Old password">
-            <input class="form-control login" name="passwords[new]" type="password" id="new-pwd" placeholder="New password">
-  				  <input class="btn-primary btn" type="submit" name="submit" value="Confirm" />
-  				</form>
-  				</div>
-  			</li>
-        <li style="padding: 15px; padding-bottom: 10px;" class="">Logout</li>
-  		</ul>
-  	</div>
-  </div>
+  <nav class="navbar navbar-toggleable-md navbar-inverse">
+    <div class="container-fluid">
+      <!-- brand and toggle grouped together for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-ctonrols="navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Track your Trails</a>
+      </div>
+      <!-- the nav links -->
+      <div id="myNavbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown"><a href="#" class="dropdown-toggle" role="button" id="sign-in-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+              <div class="sign-in dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
+              <form class="sign-in-form">
+                <!-- make type email after testing.. -->
+                <input class="form-control login" name="credentials[email]" id="sign-in-name" type="text" placeholder="Enter email">
+                <input class="form-control login" name="credentials[password]" id="sign-in-pwd" type="password" placeholder="Enter password">
+                <br>
+                <input class="btn-primary btn" id="sign-in-button" type="submit" name="submit" value="Login" />
+              </form>
+            </div>
+          </li>
+          <li><a class="dropdown-toggle" id="change-pwd-dropdown" data-toggle="dropdown">Change password<span class="caret"></span></a>
+            <div class="change-pwd dropdown-menu" style="padding: 15px; padding-top: 10px;">
+              <form class="change-pwd-form">
+                <!-- make type email after testing.. -->
+                <input class="form-control login" name="passwords[old]" type="password" id="old-pwd" placeholder="Old">
+                <input class="form-control login" name="passwords[new]" type="password" id="new-pwd" placeholder="New">
+                <br>
+                <input class="btn-primary btn" id="change-pwd-button" type="submit" name="submit" value="Confirm" />
+              </form>
+            </div>
+          </li>
+          <li><a id="sign-out-link">Logout</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <!-- image and home page, hide when user is logged in -->
-    <div class="heading">
-      <h1 id="title"><span>Track your Trails</span></h1>
-      <h3 id="sub-heading"><span>An app to help you track your trails. Are you ready for your next adventure?</span></h3>
-      <!-- sign-up link that opens a modal -->
-      <div class="sign-up">
-        <h4 id="sign-up"><span>New user? Sign-up <a data-toggle="modal" data-target="#sign-up-modal" href="#">here</a></span></h4>
-      </div>
+  <div class="heading">
+    <h1 id="title"><span>Track your Trails</span></h1>
+    <h3 id="sub-heading"><span>An app to help you track your trails. Are you ready for your next adventure?</span></h3>
+    <!-- sign-up link that opens a modal -->
+    <div class="sign-up">
+      <h4 id="sign-up"><span>New user? Sign-up <a data-toggle="modal" data-target="#sign-up-modal" href="#">here</a></span></h4>
     </div>
+  </div>
 
   <!--  sign-up modal -->
   <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -74,7 +76,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title" id="sign-up-modal-label">Sign up below!</h4>
+          <h5 class="modal-title" id="sign-up-modal-label">Sign up below!</h5>
         </div>
         <div class="sign-up-modal-body">
           <form class="sign-up-form">
@@ -95,18 +97,23 @@
     </div>
   </div>
 
-  <!-- user messages -->
-  <div id="hike-messages"></div><br>
+
+  <div class="user-message">
+    <h3 id="user-message"><span></span></h3>
+  </div>
 
   <!-- button to hide all hikes shown -->
-  <input type="submit" name="hide-all-hikes" class="btn-primary btn" id="hide-hikes" value="Hide my hikes"><br>
-
+  <br>
+  <input type="submit" name="hide-all-hikes" class="btn-primary btn" id="hide-hikes" value="Hide my hikes">
+  <br>
   <!-- button to get all hikes user has gone on -->
-  <input type="submit" name="get-all-hikes" class="btn-primary btn" id="get-hikes" value="See my hikes"><br>
-
+  <br>
+  <input type="submit" name="get-all-hikes" class="btn-primary btn" id="get-hikes" value="See my hikes">
+  <br>
   <!-- create hike button trigger modal -->
+  <br>
   <button type="button" class="new-hike-button btn btn-primary" data-toggle="modal" data-target="#create-hike-modal">Submit a new hike</button>
-
+  <br>
   <!-- Modal -->
   <div class="modal fade" id="create-hike-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -115,9 +122,9 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="create-hike-modal-title" id="modalLabel">Input your recent hike!</h4>
+          <h5 class="create-hike-modal-title">Input your recent hike!</h5>
         </div>
-        <div class="modal-body">
+        <div class="create-hike-modal-body">
           <form class="create-hike-form">
             <div class="form-group">
               <label>Date of hike: <input name="hike[hike_date]" type="date" id="date" required></label><br>

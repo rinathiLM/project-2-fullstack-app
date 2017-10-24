@@ -12,7 +12,15 @@ $(() => {
 $(() => {
   authEvents.addHandlers()
   hikeEvents.addHandlers()
+  $('#create-hike-form').on('submit', hikeEvents.onCreateHike)
+  $('#new-hike-button').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
 })
+
+// $('#create-hike-modal').on('hidden.bs.modal', function () {
+//   $(this).find('form')[0].reset()
+// })
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')

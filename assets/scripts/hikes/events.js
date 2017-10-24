@@ -13,6 +13,7 @@ const onCreateHike = function (event) {
 
 const onGetAllHikes = function (event) {
   event.preventDefault()
+  console.log(event)
   api.getHikes()
     .then(ui.getHikesSuccess)
     // had to do the below so that all of these run before my handlebars since the button functionality relies on the below
@@ -20,6 +21,16 @@ const onGetAllHikes = function (event) {
     .then(() => $('.delete-hike-link').on('click', onDeleteHike))
     .catch(ui.getHikesFailure)
 }
+
+// new function to get the click handlers to get all hikes again..
+// const getAllAgain = function (event) {
+//   api.getHikes()
+//     .then(ui.getHikesSuccess)
+//     // had to do the below so that all of these run before my handlebars since the button functionality relies on the below
+//     .then(() => $('.update-hike-form').on('submit', onUpdateHike))
+//     .then(() => $('.delete-hike-link').on('click', onDeleteHike))
+//     .catch(ui.getHikesFailure)
+// }
 
 const onDeleteHike = function (event) {
   event.preventDefault()

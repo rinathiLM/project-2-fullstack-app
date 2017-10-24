@@ -31,18 +31,32 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-// const onSignOut = function (event) {
-//   event.preventDefault()
-//   // console.log('signed out')
-//   authApi.signOut()
-//     .then(authUi.signOutSuccess)
-//     .catch(authUi.signInFailure)
-// }
+const onSignOut = function (event) {
+  event.preventDefault()
+  console.log('signed out')
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signInFailure)
+}
+
+const showSignin = function (event) {
+  event.preventDefault()
+  $('.sign-in').show()
+}
+
+const showPwdchange = function (event) {
+  event.preventDefault()
+  $('.change-pwd').show()
+}
 
 const addHandlers = function () {
   $('.sign-up-form').on('submit', onSignUp)
   $('.sign-in-form').on('submit', onSignIn)
   $('.change-pwd-form').on('submit', onChangePassword)
+  $('#sign-out-link').on('click', onSignOut)
+  // show dropdown again after use is done the first time
+  $('#sign-in-dropdown').on('click', showSignin)
+  $('#change-pwd-dropdown').on('click', showPwdchange)
 }
 
 module.exports = {
