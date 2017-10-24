@@ -9,7 +9,6 @@
         <th>State</th>
         <th>Elevation gain</th>
         <th>Miles roundtrip</th>
-        <th>Duration</th>
         <th>Difficulty</th>
         <th>Rating</th>
         <th>Notes</th>
@@ -22,20 +21,21 @@
         <td>{{hike.state}}</td>
         <td>{{hike.elevation_gain}}</td>
         <td>{{hike.miles_rt}}</td>
-        <td>{{hike.duration}}</td>
         <td>{{hike.difficulty}}</td>
         <td>{{hike.rating}}</td>
         <td>{{hike.notes}}</td>
-        <td><a class="update-hike-link" data-id="{{hike.id}}" href="#update-hike-modal{{hike.id}}" data-toggle="modal">Update</a><br><a class="delete-hike-link" data-id="{{hike.id}}" href="#">Delete</a></td>
-        <!-- <td><a class="update-hike-link" data-id="{{hike.id}}" href="#update-hike-modal{{hike.id}}" data-toggle="modal">Update</a></td>
-        <td><a class="delete-hike-link" data-id="{{hike.id}}" href="#">Delete</a></td> -->
+        <!-- link to update and delete each hike in the last column -->
+        <td>
+          <a class="update-hike-link" data-id="{{hike.id}}" href="#update-hike-modal{{hike.id}}" data-toggle="modal">Update</a><br>
+          <a class="delete-hike-link" data-id="{{hike.id}}" href="#">Delete</a>
+        </td>
       </tr>
     </table>
   </div>
 
-  <!-- modal to update hike once button is clicked -->
+  <!-- modal to update hike once link is clicked -->
   <div class="modal fade" id="update-hike-modal{{hike.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <!--  removed class="update-hike-moda"-->
+    <!--  removed class="update-hike-modal"-->
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -44,6 +44,26 @@
              </button>
           <h5 class="update-hike-modal-title">Input the fields you would like to update</h5>
         </div>
+        <!-- https://stackoverflow.com/questions/24557778/issue-about-spaces-between-words-in-value-attribute -->
+        <!-- let update_input = $('.update-modal-body');
+
+        $("select").multiselect({
+            selectedText: "# of # selected",
+            click: function (event, ui) {
+                if (ui.checked) {
+                  var span = '<input type="radio" value="+ ui.text +"><div id="' + ui.value + '">'+ ui.text +'</div>'
+                  post_text.append(span);
+
+                  let $input = jQuery("<input>").attr("type", "text").val(ui.text);
+                  let $div = jQuery("<div></div>").attr("id", ui.value).html(ui.text);
+                  post_text.append($input).append($div);
+                } else {
+                    post_text.find('#'+ui.value).remove();
+                }
+            }
+        }); -->
+
+
         <div class="update-modal-body">
           <form class="update-hike-form" data-id="{{hike.id}}">
             <label>Date of hike: <input name="hike[hike_date]" type="date" value={{hike.hike_date}}></label><br>

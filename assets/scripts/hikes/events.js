@@ -13,7 +13,7 @@ const onCreateHike = function (event) {
 
 const onGetAllHikes = function (event) {
   event.preventDefault()
-  console.log(event)
+  // console.log(event)
   api.getHikes()
     .then(ui.getHikesSuccess)
     // had to do the below so that all of these run before my handlebars since the button functionality relies on the below
@@ -22,15 +22,15 @@ const onGetAllHikes = function (event) {
     .catch(ui.getHikesFailure)
 }
 
-// new function to get the click handlers to get all hikes again..
-// const getAllAgain = function (event) {
-//   api.getHikes()
-//     .then(ui.getHikesSuccess)
-//     // had to do the below so that all of these run before my handlebars since the button functionality relies on the below
-//     .then(() => $('.update-hike-form').on('submit', onUpdateHike))
-//     .then(() => $('.delete-hike-link').on('click', onDeleteHike))
-//     .catch(ui.getHikesFailure)
-// }
+const getHikesUpdate = function (event) {
+  // console.log(event)
+  api.getHikes()
+    .then(ui.getHikesSuccess)
+    // had to do the below so that all of these run before my handlebars since the button functionality relies on the below
+    .then(() => $('.update-hike-form').on('submit', onUpdateHike))
+    .then(() => $('.delete-hike-link').on('click', onDeleteHike))
+    .catch(ui.getHikesFailure)
+}
 
 const onDeleteHike = function (event) {
   event.preventDefault()
@@ -45,27 +45,28 @@ const onDeleteHike = function (event) {
 
 const onUpdateHike = function (event) {
   event.preventDefault()
-  console.log('update modal button clicked')
+  // console.log('update modal button clicked')
   const hikeId = $(event.target).data('id')
-  console.log('hike updating is', hikeId)
+  // console.log('hike updating is', hikeId)
   const updateHike = getFormFields(event.target)
-  console.log('updated info:', updateHike)
+  // console.log('updated info:', updateHike)
   api.updateHike(updateHike, hikeId)
     .then(ui.updateHikeSuccess(hikeId))
+    .then(getHikesUpdate)
     .catch(ui.updateHikeFailure)
 }
 
-const onHideHikes = function (event) {
-  event.preventDefault()
-  $('.content').hide()
-  $('#hide-hikes').hide()
-  $('#get-hikes').show()
-}
+// const onHideHikes = function (event) {
+//   event.preventDefault()
+//   $('.content').hide()
+//   $('#hide-hikes').hide()
+//   $('#get-hikes').show()
+// }
 
 const addHandlers = function () {
   $('.create-hike-form').on('submit', onCreateHike)
   $('#get-hikes').on('click', onGetAllHikes)
-  $('#hide-hikes').on('click', onHideHikes)
+  // $('#hide-hikes').on('click', onHideHikes)
   $('#update-hike-modal').on('click', onUpdateHike)
 }
 

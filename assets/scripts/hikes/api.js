@@ -4,8 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createHike = function (data) {
-  console.log('made it to hike created api')
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/hikes',
     method: 'POST',
@@ -38,7 +37,7 @@ const getHikes = function () {
 }
 
 const deleteHike = function (hikeId) {
-  console.log('api going to delete', hikeId)
+  // console.log('api going to delete', hikeId)
   return $.ajax({
     url: config.apiOrigin + '/hikes/' + hikeId,
     method: 'DELETE',
