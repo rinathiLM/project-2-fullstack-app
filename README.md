@@ -33,7 +33,6 @@ Link to wireframes - https://drive.google.com/file/d/0By5LPJuxCHaEektjOWNybS1fR1
 - Bootstrap
 
 ## Development Process
-Document your planning and tell a story about your development process and problem-solving strategy
 
 Setting up the Rails API wasn't as difficult as I thought, especially since it was my first time. The more difficult and time-consuming portion was getting the data to display and updating the UI accordingly based on user actions. I incorporated bootstrap modals and navbar functionality that was hard to use at first, trying to get a form to submit was pretty difficult for instance (then getting the modal to disappear, then the modal backdrop to disappear, ... and so on.).
 
