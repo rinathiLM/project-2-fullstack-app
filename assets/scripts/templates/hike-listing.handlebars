@@ -42,26 +42,6 @@
              </button>
           <h5 class="update-hike-modal-title">Input the fields you would like to update</h5>
         </div>
-        <!-- https://stackoverflow.com/questions/24557778/issue-about-spaces-between-words-in-value-attribute -->
-        <!-- let update_input = $('.update-modal-body');
-
-        $("select").multiselect({
-            selectedText: "# of # selected",
-            click: function (event, ui) {
-                if (ui.checked) {
-                  var span = '<input type="radio" value="+ ui.text +"><div id="' + ui.value + '">'+ ui.text +'</div>'
-                  post_text.append(span);
-
-                  let $input = jQuery("<input>").attr("type", "text").val(ui.text);
-                  let $div = jQuery("<div></div>").attr("id", ui.value).html(ui.text);
-                  post_text.append($input).append($div);
-                } else {
-                    post_text.find('#'+ui.value).remove();
-                }
-            }
-        }); -->
-
-
         <div class="update-modal-body">
           <form class="update-hike-form" data-id="{{hike.id}}">
             <label>Date of hike: <input name="hike[hike_date]" type="date" value={{hike.hike_date}}></label><br>

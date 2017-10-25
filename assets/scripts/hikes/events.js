@@ -36,10 +36,10 @@ const getHikesUpdate = function (event) {
 
 const onDeleteHike = function (event) {
   event.preventDefault()
-  console.log('delete hike clicked')
+  // console.log('delete hike clicked')
   // have to get the hike ID that I want to delete
   const hikeId = $(event.target).data('id')
-  console.log(hikeId)
+  // console.log(hikeId)
   api.deleteHike(hikeId)
     .then(ui.deleteHikeSuccess(hikeId))
     .catch(ui.deleteHikeFailure)

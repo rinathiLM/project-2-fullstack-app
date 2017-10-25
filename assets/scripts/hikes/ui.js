@@ -26,23 +26,21 @@ const getHikesSuccess = (data) => {
 }
 
 const getHikesFailure = () => {
-  console.log('Failed to get all hikes')
-  // add failure message
+  // console.log('Failed to get all hikes')
 }
 
 const deleteHikeSuccess = (id) => {
-  console.log('Successfully deleted a hike')
+  // console.log('Successfully deleted a hike')
   $("div[data-id='" + id + "']").remove()
   // show message that you succssfully deleted name of hike
 }
 
 const deleteHikeFailure = () => {
-  console.log('Failed to delete hike')
-  // add failure message
+  // console.log('Failed to delete hike')
 }
 
 const updateHikeSuccess = (data) => {
-  console.log('Successful update')
+  // console.log('Successful update')
   // $('.update-hike-modal-title').text('You successfully updated your hike! Close this message to see your change(s).')
   // $('.update-modal-body').hide()
   $('#update-hike-modal').modal('hide')
@@ -51,7 +49,7 @@ const updateHikeSuccess = (data) => {
 }
 
 const updateHikeFailure = () => {
-  console.log('Failed to update')
+  // console.log('Failed to update')
   $('.update-hike-modal-title').text('Something is wrong, please close this box and try again.')
 }
 
