@@ -28,6 +28,7 @@ const signInSuccess = function (data) {
   // show  elements after logged in
   $('.new-hike-button').show()
   $('#get-hikes').show()
+  $('#hide-hikes').show()
   // display navbar links on signin
   $('#change-pwd-dropdown').show()
   $('#sign-out-link').show()
@@ -64,6 +65,7 @@ const signOutSuccess = function () {
   $('.user-message').hide()
   $('.heading').show()
   $('#content').hide()
+  $('#hide-hikes').hide()
   // hide and display navbar links on signout
   $('#change-pwd-dropdown').hide()
   $('#sign-out-link').hide()

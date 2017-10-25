@@ -8,6 +8,7 @@ const onCreateHike = function (event) {
   // console.log(data)
   api.createHike(data)
     .then(ui.createHikeSuccess)
+    .then(getHikesUpdate)
     .catch(ui.createHikeFailure)
 }
 
@@ -22,8 +23,8 @@ const onGetAllHikes = function (event) {
     .catch(ui.getHikesFailure)
 }
 
+// function to get hikes again once a hike is updated or created
 const getHikesUpdate = function (event) {
-  // console.log(event)
   api.getHikes()
     .then(ui.getHikesSuccess)
     // had to do the below so that all of these run before my handlebars since the button functionality relies on the below
