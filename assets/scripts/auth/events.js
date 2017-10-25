@@ -51,6 +51,7 @@ const showPwdchange = function (event) {
 
 const addHandlers = function () {
   $('.sign-up-form').on('submit', onSignUp)
+  // $('#sign-in-button').on('submit', onSignIn)
   $('.sign-in-form').on('submit', onSignIn)
   $('.change-pwd-form').on('submit', onChangePassword)
   $('#sign-out-link').on('click', onSignOut)
