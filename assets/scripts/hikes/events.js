@@ -13,6 +13,7 @@ const onCreateHike = function (event) {
 }
 
 const onGetAllHikes = function (event) {
+  $('#get-hikes').hide()
   event.preventDefault()
   // console.log(event)
   api.getHikes()
@@ -57,17 +58,9 @@ const onUpdateHike = function (event) {
     .catch(ui.updateHikeFailure)
 }
 
-// const onHideHikes = function (event) {
-//   event.preventDefault()
-//   $('.content').hide()
-//   $('#hide-hikes').hide()
-//   $('#get-hikes').show()
-// }
-
 const addHandlers = function () {
   $('.create-hike-form').on('submit', onCreateHike)
   $('#get-hikes').on('click', onGetAllHikes)
-  // $('#hide-hikes').on('click', onHideHikes)
   $('#update-hike-modal').on('click', onUpdateHike)
 }
 

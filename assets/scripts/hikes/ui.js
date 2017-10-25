@@ -8,9 +8,6 @@ const createHikeSuccess = (data) => {
   $('#create-hike-modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  $('.modal').on('hidden.bs.modal', function () {
-    $(this).find('form')[0].reset()
-  })
 }
 
 const createHikeFailure = () => {

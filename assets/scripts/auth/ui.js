@@ -27,8 +27,7 @@ const signInSuccess = function (data) {
   $('.sign-in').hide()
   // show  elements after logged in
   $('.new-hike-button').show()
-  $('#get-hikes').show()
-  $('#hide-hikes').show()
+  $('.hidden-buttons').show()
   // display navbar links on signin
   $('#change-pwd-dropdown').show()
   $('#sign-out-link').show()

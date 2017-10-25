@@ -7,26 +7,25 @@ body {
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.1)
   ),
-  // url('https://i.imgur.com/8blmuze.jpg');
-//  url('https://i.imgur.com/SkT3zkZ.jpg');
   url('https://i.imgur.com/qmUZVdb.jpg');
-  // background-image: url('https://i.imgur.com/8blmuze.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
-// hide user messages for log in, change password
 .user-message {
   display: none;
 }
 
 // message styling for users logged in
 #user-message {
-  color: black;
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 25px;
   position: absolute;
+  padding-bottom: 30px;
+  padding-top: 20px;
   text-align: left;
   left: 45%;
   width: 80%;
@@ -38,10 +37,6 @@ body {
   background: rgba(255, 255, 255, 0.70);
 }
 
-.collection {
-  margin-top: 40px;
-}
-
 // spacing for fields in modal form
 .sign-up-form,
 .create-hike-form,
@@ -50,10 +45,9 @@ body {
 }
 
 // buttons tthat are hidden at start screen
-#hide-hikes,
-#get-hikes,
-.new-hike-button {
+.hidden-buttons {
   display: none;
+  padding-top: 30px;
 }
 
 // navbar options that are hidden at start
@@ -62,33 +56,43 @@ body {
   display: none;
 }
 
-// th, td {
-//   border-bottom: 1px solid #ddd;
-//   padding: 15px;
-//   height: 15px;
-//   width: 25px;
-//   text-align: left;
-// }
-
-td {
-  height: 15px;
-  width: 20px;
-}
-
 table {
   border-collapse: collapse;
-  left: 30%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 50px;
-  padding-top: 100px;
-  top: 50px;
+  border-spacing: 0;
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 720px;
+}
+
+td,
+th {
+  border: 1px solid #CCC;
+  height: 30px;
+}
+
+th {
+    background: #DFDFDF;
+    font-weight: bold;
+}
+
+td {
+  text-align: left;
 }
 
 .navbar {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.70);
   border: none;
   padding: 5px;
+}
+
+.navbar-brand {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#myNavbar {
+  font-size: 15px;
 }
 
 #title {
@@ -127,13 +131,8 @@ table {
 // box surrounding messages
 #title span,
 #sub-heading span,
-#sign-up span,
-#user-message span {
+#sign-up span {
   letter-spacing: 1px;
   background: rgba(0, 0, 0, 0.25);
   padding: 15px;
 }
-
-// .container-fluid {
-//   font-family: Tahoma, Geneva, sans-serif;
-// }
