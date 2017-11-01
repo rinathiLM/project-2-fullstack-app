@@ -8,6 +8,10 @@ const createHikeSuccess = (data) => {
   $('#create-hike-modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
+  // function to clear out submit form after submit - found via stackoverflow
+  $('.modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
 }
 
 const createHikeFailure = () => {
@@ -21,7 +25,8 @@ const getHikesSuccess = (data) => {
   // console.log(data.hikes)
   const showHikesHtml = showHikesTemplate({ hikes: data.hikes })
   $('.content').html(showHikesHtml)
-  // $('#get-hikes').hide()
+  // if user has no hikes, let them know..
+  $('#get-hikes').hide()
   // $('#hide-hikes').show()
 }
 
@@ -31,7 +36,7 @@ const getHikesFailure = () => {
 
 const deleteHikeSuccess = (id) => {
   // console.log('Successfully deleted a hike')
-  $("div[data-id='" + id + "']").remove()
+  // $("div[data-id='" + id + "']").remove()
   // show message that you succssfully deleted name of hike
 }
 

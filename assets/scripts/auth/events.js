@@ -8,6 +8,8 @@ const onSignUp = function (event) {
   // console.log(data)
   api.signUp(data)
     .then(ui.signUpSuccess)
+    // added this for automatic sign-in
+    .then(onSignIn)
     .catch(ui.signUpFailure)
 }
 

@@ -1,12 +1,17 @@
 'use strict'
 const store = require('../store')
+const api = require('./api')
 
 const signUpSuccess = function (data) {
   // console.log('Sign up button clicked successfully')
-  $('#sign-up-modal-label').text('You successfully created an account, close this message and log in!')
-  $('.sign-up-modal-body').hide()
+  // $('#sign-up-modal-label').text('You successfully created an account, close this message and log in!')
+  // $('.sign-up-modal-body').hide()
+  // update code so that i'm logging in right after signup..
+  api.signIn(data)
+    .then(signInSuccess)
+    .catch(signInFailure)
   // hiding html elements in home page
-  $('.heading').hide()
+  // $('.heading').hide()
 }
 
 const signUpFailure = function () {

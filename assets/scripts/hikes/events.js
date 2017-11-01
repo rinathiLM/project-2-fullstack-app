@@ -13,7 +13,6 @@ const onCreateHike = function (event) {
 }
 
 const onGetAllHikes = function (event) {
-  $('#get-hikes').hide()
   event.preventDefault()
   // console.log(event)
   api.getHikes()
