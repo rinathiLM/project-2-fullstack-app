@@ -9,7 +9,9 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.signUpSuccess)
     // added this for automatic sign-in
-    .then(onSignIn)
+    // .then(api.signIn(data)
+    //   .then(ui.signInSuccess)
+    //   .catch(ui.signInFailure))
     .catch(ui.signUpFailure)
 }
 

@@ -1,4 +1,3 @@
-
   <div data-id="{{hike.id}}">
     <table class="table table-hover">
       <tr>
@@ -14,7 +13,7 @@
         <th>Actions</th>
       </tr>
       {{#each hikes as |hike|}}
-      <tr>
+      <tr data-id="{{hike.id}}">
         <td>{{hike.hike_date}}</td>
         <td>{{hike.hike_name}}</td>
         <td>{{hike.city}}</td>
@@ -26,17 +25,16 @@
         <td>{{hike.notes}}</td>
         <!-- link to update and delete each hike in the last column -->
         <td>
-          <a class="update-hike-link" data-id="{{hike.id}}" href="#update-hike-modal{{hike.id}}" data-toggle="modal">Update</a><br>
+          <a class="update-hike-link" data-id="{{hike.id}}" href="#" data-target="#update-hike-modal{{hike.id}}" data-toggle="modal">Update</a><br>
           <a class="delete-hike-link" data-id="{{hike.id}}" href="#">Delete</a>
         </td>
       </tr>
       {{/each}}
     </table>
   </div>
+
   <!-- modal to update hike once link is clicked -->
   <div class="modal fade" id="update-hike-modal{{hike.id}}" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel">
-    <!-- id="update-hike-modal{{hike.id}}"  -->
-    <!--  removed class="update-hike-modal"-->
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">

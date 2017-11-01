@@ -41,6 +41,7 @@ const onDeleteHike = function (event) {
   // console.log(hikeId)
   api.deleteHike(hikeId)
     .then(ui.deleteHikeSuccess(hikeId))
+    .then(getHikesUpdate)
     .catch(ui.deleteHikeFailure)
 }
 
@@ -59,7 +60,7 @@ const onUpdateHike = function (event) {
 
 const addHandlers = function () {
   $('.create-hike-form').on('submit', onCreateHike)
-  $('#get-hikes').on('click', onGetAllHikes)
+  $('.get-hikes-button').on('click', onGetAllHikes)
   $('#update-hike-modal').on('click', onUpdateHike)
 }
 
