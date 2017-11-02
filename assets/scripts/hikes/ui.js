@@ -5,6 +5,7 @@ const createHikeSuccess = (data) => {
   // console.log('Successfully created hike ', data)
   // $('.create-hike-modal-title').text('Yay, you just inputted a new adventure! Close this message to see your recent input.')
   // $('.create-hike-modal-body').hide()
+  $('.get-hikes-button').hide()
   $('#create-hike-modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
@@ -25,9 +26,7 @@ const getHikesSuccess = (data) => {
   // console.log(data.hikes)
   const showHikesHtml = showHikesTemplate({ hikes: data.hikes })
   $('.content').html(showHikesHtml)
-  // if user has no hikes, let them know..
-  $('#get-hikes').hide()
-  // $('#hide-hikes').show()
+  $('.get-hikes-button').hide()
 }
 
 const getHikesFailure = () => {
@@ -46,7 +45,6 @@ const deleteHikeFailure = () => {
 
 const updateHikeSuccess = (data) => {
   // console.log('Successful update')
-  // $('.update-hike-modal-title').text('You successfully updated your hike! Close this message to see your change(s).')
   // $('.update-modal-body').hide()
   $('#update-hike-modal').modal('hide')
   $('body').removeClass('modal-open')

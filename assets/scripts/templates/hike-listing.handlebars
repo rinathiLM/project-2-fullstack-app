@@ -1,5 +1,5 @@
-  <div data-id="{{hike.id}}">
-    <table class="table table-hover">
+{{#if hikes}}
+  <table class="table table-hover">
       <tr>
         <th>Date</th>
         <th>Hike Name</th>
@@ -13,7 +13,7 @@
         <th>Actions</th>
       </tr>
       {{#each hikes as |hike|}}
-      <tr data-id="{{hike.id}}">
+      <tr>
         <td>{{hike.hike_date}}</td>
         <td>{{hike.hike_name}}</td>
         <td>{{hike.city}}</td>
@@ -25,15 +25,18 @@
         <td>{{hike.notes}}</td>
         <!-- link to update and delete each hike in the last column -->
         <td>
-          <a class="update-hike-link" data-id="{{hike.id}}" href="#" data-target="#update-hike-modal{{hike.id}}" data-toggle="modal">Update</a><br>
+          <a class="update-hike-link" data-id="{{hike.id}}" href="#update-hike-modal{{hike.id}}" data-toggle="modal">Update</a><br>
           <a class="delete-hike-link" data-id="{{hike.id}}" href="#">Delete</a>
         </td>
       </tr>
       {{/each}}
-    </table>
-  </div>
+      {{else}}
+      <p>Oh no, you don't have any hikes yet - create one to get started!</p>
+      {{/if}}
+  </table>
 
   <!-- modal to update hike once link is clicked -->
+  {{#each hikes as |hike|}}
   <div class="modal fade" id="update-hike-modal{{hike.id}}" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -45,8 +48,8 @@
         </div>
         <div class="update-modal-body">
           <form class="update-hike-form" data-id="{{hike.id}}">
-            <label>Date of hike: <input name="hike[hike_date]" type="date" value={{hike.hike_date}}></label><br>
-            <label>Hike name: <input name="hike[hike_name]" type="text" value={{hike.hike_name}}></label><br>
+            <label>Date of hike: <input name="hike[hike_date]" type="date" value="{{hike.hike_date}}"></label><br>
+            <label>Hike name: <input name="hike[hike_name]" type="text" value="{{hike.hike_name}}"></label><br>
             <label>City: <input name="hike[city]" type="text" value={{hike.city}}></label><br>
             <label>State: <input name="hike[state]" type="text" value={{hike.state}}></label><br>
             <label>Elevation gain: <input name="hike[elevation_gain]" type="text" value={{hike.elevation_gain}}></label><br>
@@ -64,3 +67,4 @@
       </div>
     </div>
   </div>
+  {{/each}}
