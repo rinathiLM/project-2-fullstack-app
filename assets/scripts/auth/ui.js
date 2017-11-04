@@ -3,10 +3,7 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   // console.log('Sign up button clicked successfully')
-  // hide modal once successfully signed up, not sure why it doesn't close without some manipulation..
   $('#sign-up-modal').modal('hide')
-  $('body').removeClass('modal-open')
-  $('.modal-backdrop').remove()
   // hiding html elements once sign up success
   $('.heading').hide()
   $('.user-message').show()
@@ -27,14 +24,14 @@ const signInSuccess = function (data) {
   // console.log('Signed in successfully')
   // console.log(data)
   $('#sign-in-modal').modal('hide')
-  $('body').removeClass('modal-open')
-  $('.modal-backdrop').remove()
+  $('.user-message').show()
   $('#user-message').text('Welcome! What would you like to do?')
   // hide html elements in home page and dropdown menu
   $('.heading').hide()
   $('.sign-in').hide()
   // show  elements after logged in
   $('.hidden-buttons').show()
+  $('.get-hikes-button').show()
   // display navbar links on signin
   $('#change-pwd-link').show()
   $('#sign-out-link').show()
@@ -50,14 +47,8 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function () {
   // console.log('Changed password successfully')
-  // message that user changed password successfully
-  // $('#change-pwd-modal').modal('hide')
-  // $('body').removeClass('modal-open')
-  // $('.modal-backdrop').remove()
-  $('#change-pwd-modal-label').text('You changed your password successfully! Please close this message to continue.')
-  $('.change-pwd-modal-body').hide()
-  // $('#user-message').text('You changed your password successfully. What would you like to do?')
-  // hide dropdown menus
+  $('#change-pwd-modal').modal('hide')
+  $('#user-message').text('You changed your password successfully. What would you like to do?')
   $('#old-pwd').val('')
   $('#new-pwd').val('')
 }
@@ -74,6 +65,7 @@ const signOutSuccess = function () {
   // hide all the other fields and show home screen again
   $('.heading').show()
   $('.hidden-buttons').hide()
+  $('.get-hikes-button').hide()
   $('.user-message').hide()
   $('#user-message').text('')
   $('#content').empty()

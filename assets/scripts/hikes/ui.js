@@ -9,6 +9,7 @@ const createHikeSuccess = (data) => {
   $('#create-hike-modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
+  $('#user-message').text('Welcome! What would you like to do?')
   // function to clear out submit form after submit - found via stackoverflow
   $('.modal').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
@@ -27,6 +28,7 @@ const getHikesSuccess = (data) => {
   const showHikesHtml = showHikesTemplate({ hikes: data.hikes })
   $('.content').html(showHikesHtml)
   $('.get-hikes-button').hide()
+  $('#user-message').text('Welcome! What would you like to do?')
 }
 
 const getHikesFailure = () => {
@@ -49,11 +51,12 @@ const updateHikeSuccess = (data) => {
   $('#update-hike-modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
+  $('#user-message').text('Welcome! What would you like to do?')
 }
 
 const updateHikeFailure = () => {
   // console.log('Failed to update')
-  $('.update-hike-modal-title').text('Something is wrong, please close this box and try again.')
+  $('.update-hike-modal-title').text('Something is wrong, please close try again.')
 }
 
 module.exports = {
