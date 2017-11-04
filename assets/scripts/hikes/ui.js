@@ -7,8 +7,6 @@ const createHikeSuccess = (data) => {
   // $('.create-hike-modal-body').hide()
   $('.get-hikes-button').hide()
   $('#create-hike-modal').modal('hide')
-  $('body').removeClass('modal-open')
-  $('.modal-backdrop').remove()
   $('#user-message').text('Welcome! What would you like to do?')
   // function to clear out submit form after submit - found via stackoverflow
   $('.modal').on('hidden.bs.modal', function () {
